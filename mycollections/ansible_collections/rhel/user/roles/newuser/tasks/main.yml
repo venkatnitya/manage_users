@@ -1,0 +1,6 @@
+- name: Create users
+  user:
+    name: "{{ item.split(':')[0] }}"
+    state: "{{ item.split(':')[1] }}"
+    uid: "{{ item.split(':')[2] }}"
+  loop: "{{ lookup('file', 'user.conf').splitlines() }}"

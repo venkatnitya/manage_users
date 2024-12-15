@@ -1,0 +1,6 @@
+---
+- name: use rhel collection
+  hosts: all
+  become: yes
+  roles:
+    - rhel.user.newuser
